@@ -34,12 +34,20 @@ Think about the network and training parameters: which ones would you modify if 
 To get only the green and the infrared channel, first you have to find out, what the order of the channels is and then you can say, that you just want every 4th value for example.
 
 ### 2. What is the advantage of this encoding compared to a simple class label like '0', '1', '2', '3', '4', '5', or text labels like 'building', 'barren_land', ...?one
-One-hot encoding has the big advantage, that there is no anking between the numbers as it would be, if '0', '1', '2', '3', '4', '5' would be used. Each class is independent. 
+One-hot encoding has the big advantage that there is no anking between the numbers as it would be, if '0', '1', '2', '3', '4', '5' would be used. Each class is independent. 
 In comparison to text labels, numbers use less computational cost and if there is a really big data set, it easier to distinguish between the classes. 
 
-### 3. Why use extendhere and append above?
+### 3. Why use extend here and append above?
+append adds a list value within the list, while extend adds all elements from an iterable (like a list) to the end of the list. 
+In this case, we use append because we want to save the samples separately for each class and have an intricate list. In the case where extend is used, we just want to have a large list that is not intricate
 
 ### 4. What is wrong with the above code?
+In this code, we first define the classes and then look for random samples with two independent random choices. But with this, it is possible that one sample can be in more than one class. To avoid this, the order has to be changed, so that first the samples are randomly selected and then sorted into the different classes. 
+
+### 5. Why do you want to shuffle the samples in the train and test datasets?
+If you have, for example, weather data, then it is possible that the random test data is too similar, so you shuffle the samples in the train and test data to avoid this problem. 
+
+
 
 
 ## Author
