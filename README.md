@@ -33,7 +33,7 @@ Think about the network and training parameters: which ones would you modify if 
 ### 1. What would you need to do to extract only the green and the infrared channel from this data?
 To get only the green and the infrared channel, first you have to find out, what the order of the channels is and then you can say, that you just want every 4th value for example.
 
-### 2. What is the advantage of this encoding compared to a simple class label like '0', '1', '2', '3', '4', '5', or text labels like 'building', 'barren_land', ...?one
+### 2. What is the advantage of this encoding compared to a simple class label like '0', '1', '2', '3', '4', '5', or text labels like 'building', 'barren_land', ...?
 One-hot encoding has the big advantage that there is no anking between the numbers as it would be, if '0', '1', '2', '3', '4', '5' would be used. Each class is independent. 
 In comparison to text labels, numbers use less computational cost and if there is a really big data set, it easier to distinguish between the classes. 
 
