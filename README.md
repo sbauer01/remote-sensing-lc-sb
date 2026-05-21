@@ -48,6 +48,15 @@ In this code, we first define the classes and then look for random samples with 
 If you have, for example, weather data, then it is possible that the random test data is too similar, so you shuffle the samples in the train and test data to avoid this problem. 
 
 
+## Change of the used channels
+
+### Only R, G, B channels
+If only these three channels are used in comparison to all four the classification accuracy decreases. In detail, the accuracy of each class decreases differently. E.g., the accuracy of the class grassland was - 12%, while the accuracy of trees decreased by just about 3%. Some classes may also increase in accuracy, but just slightly.  So for some classes, the NIR channel is more important than for others. 
+
+### Only R,G and NIR channel
+Compared to using the R, G, and B channels, the accuracy is slightly better(approximately about 1%) but still worse than using all four channels. For some individual channels, the accuracy even decreases, e.g., building (RGB: 0.91, RGNIR: 0.89), but for others, there is a clear increase in accuracy, e.g.,  road (RGB: 0.85, RGNIR: 0.9). So, also in this case, some classes are more sensitive to the Blue channel than others. 
+Note: The values are just an example for one specific run. The values may differ for other randomly chosen test saḿples. 
+
 
 
 ## Author
