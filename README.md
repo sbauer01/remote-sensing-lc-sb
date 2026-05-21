@@ -57,6 +57,8 @@ If only these three channels are used in comparison to all four the classificati
 Compared to using the R, G, and B channels, the accuracy is slightly better(approximately about 1%) but still worse than using all four channels. For some individual channels, the accuracy even decreases, e.g., building (RGB: 0.91, RGNIR: 0.89), but for others, there is a clear increase in accuracy, e.g.,  road (RGB: 0.85, RGNIR: 0.9). So, also in this case, some classes are more sensitive to the Blue channel than others. 
 Note: The values are just an example for one specific run. The values may differ for other randomly chosen test saḿples. 
 
+In the plots, the loss of the blue channel is clearly visible, since blue is a color that the human eye can see in comparison to the NIR channel, where the plots did not show a clear color change. 
+
 
 
 ## Author
