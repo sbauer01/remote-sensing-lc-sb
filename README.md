@@ -70,16 +70,16 @@ The model shows a slight increase in the accuracy. This could be due to a better
 ## Accuracy of each class
 The random_forest notebook relies entirely on scikit-learn, the CNN notebook uses PyTorch, which introduces GPU support, and the label format changes from One-Hot vectors to integer class indices. Therefore, accuracy_score() is called directly on NumPy arrays, and rf.score() is no longer used, as well as np.argmax().
 
-# Only R,G, B channel
-If we only use the RGB channels, the accuracy slightly decreases, but not as much as in the random_forest. If we look into each class, the class trees have the highest decrease from 0.9 to 
-But interesting is that the accuracy of the class increases by 0.1.
+# Only R, G, B channel
+If we only use the RGB channels, the accuracy slightly decreases, but not as much as in the random_forest. If we look into each class, the class building has the highest decrease from 0.82 to 0,71
+But interesting is that the accuracy of the class grassland increases by 0.6 to 0.99. 
 So we see again that some classes are more sensitive to the NIR channel than others. 
 
 
 # Change of hyperparameters
 As in the random_forest, I will also triple the amount of the test samples. Now, I would assume that the accuracy increases as before. 
 
-But the model shows that the accuracy decreases slightly from 0.9 to 0.948. This could be due to a 'simpler' test subset before, and now more different amples are used. So the model shows more of the reality and is therefore more bŕobust. 
+But the model shows that the accuracy decreases slightly from 0.9 to 0.948. This could be due to a 'simpler' test subset before, and now more different amples are used. So the model shows more of the reality and is therefore more robust. 
 
 
 
