@@ -27,7 +27,7 @@ Compare training times, inference times (if you notice a difference) and the qua
 
 Think about the network and training parameters: which ones would you modify if you want to improve the results?
 
-
+# Random_forest_classifier notebook
 ## Answers to Questions in the Random_forest_classifier notebook
 
 ### 1. What would you need to do to extract only the green and the infrared channel from this data?
@@ -60,11 +60,31 @@ Note: The values are just an example for one specific run. The values may differ
 In the plots, the loss of the blue channel is clearly visible, since blue is a color that the human eye can see in comparison to the NIR channel, where the plots did not show a clear color change. 
 
 ## Impact of the hyper parameters
-To see the impact of the change of one hyper parameter I choose to change 
+To see the impact of the change of one hyperparameter I chose to change the number of test samples. I would assume that an increase in the number will not change the accuracy since the test data is constant, but the robustness will increase.
+
+The model shows a slight increase in the accuracy. This could be due to a better variation of the samples, and therefore, the result shows more of the actual data, so the noise will be slightly cancelled out. 
+
+
+# CNN classifier
+
+## Accuracy of each class
+The random_forest notebook relies entirely on scikit-learn, the CNN notebook uses PyTorch, which introduces GPU support, and the label format changes from One-Hot vectors to integer class indices. Therefore, accuracy_score() is called directly on NumPy arrays, and rf.score() is no longer used, as well as np.argmax().
+
+# Only R,G, B channel
+If we only use the RGB channels, the accuracy slightly decreases, but not as much as in the random_forest. If we look into each class, the class trees have the highest decrease from 0.9 to 
+But interesting is that the accuracy of the class increases by 0.1.
+So we see again that some classes are more sensitive to the NIR channel than others. 
+
+
+# Change of hyperparameters
+As in the random_forest, I will also triple the amount of the test samples. Now, I would assume that the accuracy increases as before. 
+
+But the model shows that the accuracy decreases slightly from 0.9 to 0.948. This could be due to a 'simpler' test subset before, and now more different amples are used. So the model shows more of the reality and is therefore more bŕobust. 
 
 
 
 ## Author
 
 Martin Schultz, April 2026
+Simone Bauer, May 2026
 
