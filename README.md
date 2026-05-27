@@ -70,14 +70,6 @@ To see the impact of the change of one hyperparameter I chose to modify the `n_e
 *Result:* With the new value of 200, the overall accuracy increases from 0.927 to 0.935. In the specific classes, only a slight increase in the accuracy of the classes building and grassland is seen. This suggests that `n_estimators` mainly  affects the overall stability of the model rather than its ability to distinguish  specific classes. Therefore, the marginal accuracy gain of 0.008 does not justify  the higher computational cost, and 100 trees appear to be a reasonable default for this dataset.
 
 
-Class: building, Accuracy: 0.92
-Class: barren_land, Accuracy: 0.95
-Class: trees, Accuracy: 0.97
-Class: grassland, Accuracy: 0.86
-Class: road, Accuracy: 0.91
-Class: water, Accuracy: 1.0
-
-
 # CNN classifier
 
 ## Accuracy of each class
@@ -85,15 +77,18 @@ The random_forest notebook relies entirely on scikit-learn, the CNN notebook use
 
 ## Only R, G, B channel
 If we only use the RGB channels, the accuracy slightly decreases, but not as much as in the random_forest. If we look into each class, the class building has the highest decrease from 0.82 to 0,71
-But interesting is that the accuracy of the class grassland increases by 0.6 to 0.99. 
-So we see again that some classes are more sensitive to the NIR channel than others. 
+But interesting is that the accuracy of the class grassland increases by 0.6 to 0.99. So we see again that some classes are more sensitive to the NIR channel than others. 
+Compared to the Random Forest, the accuracy drop when removing the NIR channel is smaller in the CNN. This suggests that the CNN is able to compensate partially for the missing NIR information by learning more complex spatial features from the RGB channels alone.
+
+
 
 
 ## Change of hyperparameters
-As in the random_forest, I will also triple the amount of the test samples. Now, I would assume that the accuracy increases as before. 
+Here, I will change the learning rate of Adam from 0.001 to 0.01. 
 
-But the model shows that the accuracy decreases slightly from 0.9 to 0.948. This could be due to a 'simpler' test subset before, and now more different amples are used. So the model shows more of the reality and is therefore more robust. 
+*Expectation:* I think that a higher learning rate will maybe be too high so that it gets instable and does not increase the accuracy. 
 
+*Results:* The accuracy of all classes decreases from 0.963 to 0.943. In the accuracy of each class is interesting. While the accuracy of the classes building and water stays constant, the accuracy of the classes trees, grassland, and road decreases by up to 0.1, and the accuracy of the class barren_land increases slightly. This suggests that a higher learning rate causes the optimizer to overshoot the optimum for some classes, while others are less sensitive to this change. Overall, the results confirm the expectation that a higher learning rate leads to less stable training and lower final accuracy, making 0.001 the better choice for this dataset.
 
 
 ## Author
