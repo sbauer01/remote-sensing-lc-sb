@@ -29,6 +29,8 @@ Think about the network and training parameters: which ones would you modify if 
 
 # Results
 
+The edited notebooks can be found in the directory remote_sensing.
+
 # Random_forest_classifier notebook
 ## Answers to Questions in the Random_forest_classifier notebook
 
@@ -93,6 +95,7 @@ Here, I will change the learning rate of Adam from 0.001 to 0.01.
 
 ## Author
 
-Martin Schultz, April 2026
+Martin Schultz, April 2026 
+
 Simone Bauer, May 2026
 
