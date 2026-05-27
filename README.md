@@ -27,6 +27,8 @@ Compare training times, inference times (if you notice a difference) and the qua
 
 Think about the network and training parameters: which ones would you modify if you want to improve the results?
 
+# Results
+
 # Random_forest_classifier notebook
 ## Answers to Questions in the Random_forest_classifier notebook
 
@@ -60,9 +62,20 @@ Note: The values are just an example for one specific run. The values may differ
 In the plots, the loss of the blue channel is clearly visible, since blue is a color that the human eye can see in comparison to the NIR channel, where the plots did not show a clear color change. 
 
 ## Impact of the hyper parameters
-To see the impact of the change of one hyperparameter I chose to change the number of test samples. I would assume that an increase in the number will not change the accuracy since the test data is constant, but the robustness will increase.
 
-The model shows a slight increase in the accuracy. This could be due to a better variation of the samples, and therefore, the result shows more of the actual data, so the noise will be slightly cancelled out. 
+To see the impact of the change of one hyperparameter I chose to modify the `n_estimators` parameter, which controls the number of decision trees in the forest. The default value is 100. I tested with 200 trees.
+
+*Expectation:* I think, that a higher value of 'n_estimators' should increase the accuracy, but also increase the computational cost. 
+
+*Result:* With the new value of 200, the overall accuracy increases from 0.927 to 0.935. In the specific classes, only a slight increase in the accuracy of the classes building and grassland is seen. This suggests that `n_estimators` mainly  affects the overall stability of the model rather than its ability to distinguish  specific classes. Therefore, the marginal accuracy gain of 0.008 does not justify  the higher computational cost, and 100 trees appear to be a reasonable default for this dataset.
+
+
+Class: building, Accuracy: 0.92
+Class: barren_land, Accuracy: 0.95
+Class: trees, Accuracy: 0.97
+Class: grassland, Accuracy: 0.86
+Class: road, Accuracy: 0.91
+Class: water, Accuracy: 1.0
 
 
 # CNN classifier
