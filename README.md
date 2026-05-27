@@ -29,7 +29,7 @@ Think about the network and training parameters: which ones would you modify if 
 
 # Results
 
-The edited notebooks can be found in the directory remote_sensing.
+The edited notebooks can be found in the directory remote_sensing. I was not able to overwrite the given notebooks and delete the path. 
 
 # Random_forest_classifier notebook
 ## Answers to Questions in the Random_forest_classifier notebook
